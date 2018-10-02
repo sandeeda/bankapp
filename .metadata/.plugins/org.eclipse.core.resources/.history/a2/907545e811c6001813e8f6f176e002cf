@@ -1,0 +1,13 @@
+package com.capgemini.eaglebank.exception;
+
+public class PayeeAccountDoesNotExistException extends Exception {
+
+
+	public PayeeAccountDoesNotExistException(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+}

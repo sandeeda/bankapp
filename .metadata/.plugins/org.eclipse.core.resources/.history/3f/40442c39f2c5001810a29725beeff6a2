@@ -1,0 +1,21 @@
+package com.capgemini.eaglebank.model;
+
+import java.time.LocalDate;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import com.sandeep.bank.model.BankAccount;
+
+public class Customer {
+	private String customerName;
+	private int customerId;
+	private String password;
+	private String email;
+	private String Address;
+	private LocalDate dateOfBirth;
+	private BankAccount bankAccount;
+}

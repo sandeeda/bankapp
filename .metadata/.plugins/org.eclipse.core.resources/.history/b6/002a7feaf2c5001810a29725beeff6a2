@@ -1,0 +1,26 @@
+package com.capgemini.eaglebank.service.impl;
+
+import com.capgemini.eaglebank.model.Customer;
+import com.capgemini.eaglebank.service.EagleBankCustomerService;
+
+public class EagleBankCustomerServiceImpl implements EagleBankCustomerService {
+
+	@Override
+	public Customer authenticate(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Customer updateProfile(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updatePassword(Customer customer, String oldPassword, String newPassword) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.capgemini.eaglebank.model;
+
+public class BankAccount {
+	private long accountId;
+	private double balance;
+	private String accountType;
+
+}

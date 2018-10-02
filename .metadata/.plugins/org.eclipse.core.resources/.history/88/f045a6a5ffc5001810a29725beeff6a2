@@ -1,0 +1,36 @@
+package com.capgemini.eaglebank.repository.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.capgemini.eaglebank.model.Customer;
+import com.capgemini.eaglebank.repository.EagleBankCustomerRepository;
+@Repository
+public class EagleBankCustomerRepositoryImpl implements EagleBankCustomerRepository {
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	@Override
+	public Customer authenticate(Customer customer) {
+		// TODO Auto-generated method stub
+		try {
+			jdbc
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	@Override
+	public Customer updateProfile(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updatePassword(Customer customer, String oldPassword, String newPassword) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

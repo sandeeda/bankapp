@@ -1,0 +1,5 @@
+package com.capgemini.eaglebank.service;
+
+public interface EagleBankCustomerService {
+
+}

@@ -1,0 +1,61 @@
+package com.capgemini.eaglebank.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.eaglebank.exception.PayeeAccountDoesNotExistException;
+import com.capgemini.eaglebank.repository.EagleBankBankRepository;
+import com.capgemini.eaglebank.service.EagleBankBankService;
+@Service
+public class EagleBankBankServiceImpl implements EagleBankBankService {
+
+
+	@Autowired
+	private EagleBankBankRepository eagleBankBankRepository;
+
+	@Override
+	public double getBalance(long accountId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double withdraw(long accountId, double amount) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double deposit(long accountId, double amount) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean fundTransfer(long fromAcc, long toAcc, double amount) throws PayeeAccountDoesNotExistException {
+	
+		try {
+			double payeeBalance=eagleBankBankRepository.getBalance(toAcc);
+			double balance = eagleBankBankRepository.getBalance(fromAcc);
+			if(balance>=amount)
+			{
+				balance-=amount;
+				
+					eagleBankBankRepository.updateBalance(fromAcc, balance);
+					eagleBankBankRepository.updateBalance(toAcc, payeeBalance+amount);
+					return true;
+				 
+			}
+		} 
+		catch (DataAccessException ex) {
+			// TODO: handle exception
+			PayeeAccountDoesNotExistException px = new PayeeAccountDoesNotExistException("payee not found");
+			px.initCause(ex);
+			throw px;
+		}
+		
+		
+	}
+
+}

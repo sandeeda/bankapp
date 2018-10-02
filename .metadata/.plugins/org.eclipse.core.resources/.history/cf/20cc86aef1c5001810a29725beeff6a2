@@ -1,0 +1,20 @@
+package com.capgemini.eaglebank.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.capgemini.eaglebank.service.EagleBankService;
+
+@Controller
+public class EagleBankCustomerController {
+
+	@Autowired
+	EagleBankService eagleBankService;
+	
+	@RequestMapping("/")
+	public String getIndexPage()
+	{
+		return "index";
+	}
+}

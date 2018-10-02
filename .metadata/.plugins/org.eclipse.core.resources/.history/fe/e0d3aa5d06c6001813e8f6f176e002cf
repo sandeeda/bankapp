@@ -1,0 +1,51 @@
+package com.capgemini.eaglebank.service.impl;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.eaglebank.exception.InvalidCredentialException;
+import com.capgemini.eaglebank.model.Customer;
+import com.capgemini.eaglebank.repository.EagleBankCustomerRepository;
+import com.capgemini.eaglebank.service.EagleBankCustomerService;
+@Service
+public class EagleBankCustomerServiceImpl implements EagleBankCustomerService {
+
+	private HttpServletRequest request;
+	private HttpSession session;
+	@Autowired
+	private EagleBankCustomerRepository eagleBankCustomerRepository;
+	@Override
+	public Customer authenticate(Customer customer) throws InvalidCredentialException{
+		
+		try
+		{
+			
+			customer=eagleBankCustomerRepository.authenticate(customer);
+			session.setAttribute("customer", customer);
+
+			return customer;
+		}catch (DataAccessException ex) {
+			// TODO: handle exception
+			InvalidCredentialException ix= new InvalidCredentialException("invalid credentials");
+			ix.initCause(ex);
+			throw ix;
+		}
+	}
+
+	@Override
+	public Customer updateProfile(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updatePassword(Customer customer, String oldPassword, String newPassword) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

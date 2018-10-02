@@ -1,0 +1,29 @@
+package com.capgemini.eaglebank.exception;
+
+public class passwordNotMatchedException extends Exception {
+
+	public passwordNotMatchedException() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public passwordNotMatchedException(String arg0) {
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+
+	public passwordNotMatchedException(Throwable arg0) {
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+
+	public passwordNotMatchedException(String arg0, Throwable arg1) {
+		super(arg0, arg1);
+		// TODO Auto-generated constructor stub
+	}
+
+	public passwordNotMatchedException(String arg0, Throwable arg1, boolean arg2, boolean arg3) {
+		super(arg0, arg1, arg2, arg3);
+		// TODO Auto-generated constructor stub
+	}
+
+}

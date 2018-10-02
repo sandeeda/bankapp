@@ -1,0 +1,14 @@
+package com.capgemini.eaglebank.model;
+
+import java.time.LocalDate;
+
+
+public class Customer {
+	private String customerName;
+	private int customerId;
+	private String password;
+	private String email;
+	private String Address;
+	private LocalDate dateOfBirth;
+	private BankAccount bankAccount;
+}

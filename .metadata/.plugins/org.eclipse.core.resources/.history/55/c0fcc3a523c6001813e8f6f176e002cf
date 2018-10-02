@@ -1,0 +1,12 @@
+package com.capgemini.eaglebank.repository;
+
+import org.springframework.dao.DataAccessException;
+
+import com.capgemini.eaglebank.model.Customer;
+
+
+public interface EagleBankCustomerRepository {
+	public Customer authenticate(Customer customer)throws DataAccessException;
+	public Customer updateProfile(Customer customer);
+	public boolean updatePassword(Customer customer, String oldPassword, String newPassword);
+}

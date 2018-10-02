@@ -1,0 +1,12 @@
+package com.capgemini.eaglebank.exception;
+
+public class InvalidCredentialException extends Exception {
+
+	
+	public InvalidCredentialException(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+}

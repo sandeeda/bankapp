@@ -1,0 +1,32 @@
+package com.capgemini.eaglebank.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.eaglebank.model.Customer;
+import com.capgemini.eaglebank.repository.EagleBankCustomerRepository;
+import com.capgemini.eaglebank.service.EagleBankCustomerService;
+@Service
+public class EagleBankCustomerServiceImpl implements EagleBankCustomerService {
+
+	@Autowired
+	private EagleBankCustomerRepository eagleBankCustomerRepository;
+	@Override
+	public Customer authenticate(Customer customer) {
+		customer=eagleBankCustomerRepository.authenticate(customer);
+		return customer;
+	}
+
+	@Override
+	public Customer updateProfile(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updatePassword(Customer customer, String oldPassword, String newPassword) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

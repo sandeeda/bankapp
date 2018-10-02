@@ -1,0 +1,8 @@
+package com.capgemini.eaglebank.controller;
+
+public class EagleBankBankController {
+
+	public EagleBankBankController() {
+	}
+
+}

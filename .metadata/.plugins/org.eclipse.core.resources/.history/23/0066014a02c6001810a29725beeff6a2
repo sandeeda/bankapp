@@ -1,0 +1,10 @@
+package com.capgemini.eaglebank.service;
+
+import com.capgemini.eaglebank.model.Customer;
+
+public interface EagleBankCustomerService {
+
+	public Customer authenticate(Customer customer) ;
+	public Customer updateProfile(Customer customer);
+	public boolean updatePassword(Customer customer, String oldPassword, String newPassword);
+}
